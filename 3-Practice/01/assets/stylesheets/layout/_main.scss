@@ -1,0 +1,9 @@
+@charset "UTF-8";
+/* 共通スタイル */
+.l-main {
+  display: flex;
+
+  @include mq($sp){
+    flex-direction: column;
+  }
+}

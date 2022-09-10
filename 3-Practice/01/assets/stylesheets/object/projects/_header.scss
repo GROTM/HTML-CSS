@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/* 共通スタイル */
+.p-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .p-header__logo {
+
+    @include mq($sp){
+      max-width: 200px;
+      min-width: 100px;
+      width: 30%;
+    }
+
+    .p-header__logo--pc {
+
+      @include mq($sp){
+        display: none;
+      }
+    }
+
+    .p-header__logo--sp {
+
+      @include mq($pc){
+        display: none;
+      }
+    }
+  }
+
+  .p-header__hamburgerLine {
+
+    @include mq($sp){
+      right: 40px;
+    }
+
+    &::before {
+      @include mq($sp){
+        bottom: 10px;
+      }
+    }
+
+    &::after {
+      @include mq($sp){
+        top: 10px;
+      }
+    }
+  }
+
+  .p-header__hamburgerLine {
+    @include mq($sp){
+      @include hamburger();
+    }
+
+    &::before,
+    &::after {
+      @include mq($sp){
+        @include hamburger();
+      }
+    }
+  }
+
+  .p-header__list{
+
+    @include mq($pc){
+      display: flex;
+    }
+
+    @include mq($sp){
+      display: none;
+    }
+
+    .p-header__item {
+
+      @include mq($pc){
+        margin-left: 40px;
+        color: #fff;
+        font-size: 1.1rem;
+      }
+
+      &:first-child {
+        @include mq($pc){
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
